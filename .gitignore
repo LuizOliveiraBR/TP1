@@ -1,17 +1,24 @@
-# Object files
-*.o
+#define Inicio = 1;
+#define MaxTam = 1000;
 
-# Libraries
-*.lib
-*.a
+typedef struct{        
+    int ID;
+    int Wait;
+    int Fuel;
+    int NumFila;
+}TItem;
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+typedef struct{
+        TItem Item[1001];
+        int Frente, Tras;
+}TFila;
 
-# Executables
-*.exe
-*.out
-*.app
+void FFVazia(TFila *Fila);
+
+int FEhVazia(TFila *Fila);
+
+int FEnfileira(TFila *Fila, TItem Item);
+
+int FDesenfileira(TFila *Fila);
+
+int FFura(TFila *Fila, TItem Item);
